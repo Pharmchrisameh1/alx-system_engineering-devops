@@ -1,5 +1,18 @@
 #!/bin/bash
-# Script to print every other line from the input, starting with the first line
 
-awk 'NR % 2 == 1'
+# Initialize a counter
+count=1
+
+# Read input from standard input (piped input)
+while IFS= read -r line; do
+    # Check if the count is odd
+    if [ $((count % 2)) -eq 1 ]; then
+        echo "$line"
+    fi
+    # Increment the counter
+    ((count++))
+done
+
+# Exit with success
+exit 0
 
