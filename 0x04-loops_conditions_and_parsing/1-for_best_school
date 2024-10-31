@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This bash script displays "Best School" 10 times.
+
+export i
+for i in {0..9}
+do
+	echo "Best School"
+done
