@@ -1,0 +1,5 @@
+# This config file disables password authentication
+# and uses the path ~/.ssh/school as identity file
+Host *
+     IdentityFile ~/.ssh/school
+     PasswordAuthentication yes
