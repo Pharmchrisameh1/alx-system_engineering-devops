@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script configures a brand new Ubuntu machine
+# to redirect the page /redirect_me to alxafrica's website.
+sudo apt update
+sudo apt-get install -y nginx
+sudo chown -R "$USER:$USER" /var/www/html
+sudo chmod -R 755 /var/www
+echo "Hello World!" > /var/www/html/index.html
+text1="server_name _;\n\n\tlocation /redirect_me {\n\t\treturn 301 https://www.alxafrica.com/;\n\t}"
+sudo sed -i "s#server_name _;#$text1#" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404_page.html
+text2="server_name _;\n\n\terror_page 404 /404_page.html;"
+sudo sed -i "s#server_name _;#$text2#" /etc/nginx/sites-available/default
+sudo service nginx restart
