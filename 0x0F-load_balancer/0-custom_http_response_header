@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script configures a brand new Ubuntu machine to install
+# NGINX and make it return a X-Served-By response header with
+# the value of the server's hostname.
+sudo apt update
+sudo apt-get install -y nginx
+sudo chown -R "$USER:$USER" /var/www/html
+sudo chmod -R 755 /var/www
+text='root /var/www/html;\n\n\tadd_header X-Served-By $HOSTNAME;\n'
+sudo sed -i "s#root /var/www/html;#$text#" /etc/nginx/sites-available/default
+sudo service nginx restart
