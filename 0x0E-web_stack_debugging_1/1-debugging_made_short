@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script makes sure the nginx server is listening to port 80 without the service running.
+sudo ln -s -f /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+sudo service nginx restart
+sudo kill "$(pgrep nginx | head -1)"
