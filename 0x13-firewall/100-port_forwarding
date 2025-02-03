@@ -1,4 +1,3 @@
-File Edit Options Buffers Tools Help
 #
 # rules.before
 #
@@ -9,7 +8,6 @@ File Edit Options Buffers Tools Help
 #   ufw-before-forward
 #
 
-#port forward all 8080 requests to port 80
 *nat
 :PREROUTING ACCEPT [0:0]
 -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
