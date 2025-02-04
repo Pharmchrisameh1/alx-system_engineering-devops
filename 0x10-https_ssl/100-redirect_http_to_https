@@ -42,6 +42,6 @@ frontend http
 
 backend web-backend
     balance roundrobin
-    server web1 34.207.212.22:80 check
-    server web2 54.237.31.63:80 check
+    server web1 100.25.144.140:80 check
+    server web2 18.210.16.190:80 check
 
