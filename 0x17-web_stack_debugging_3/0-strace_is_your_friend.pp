@@ -1,5 +1,6 @@
-This manifest solves the Web Stack Debugging 03
-exec { 'Fix Typo':
+# fixing apache 500 error
+
+exec { 'Fixing 500 error':
+  command  => 'sudo sed -i "s/.phpp/.php/" /var/www/html/wp-settings.php',
   provider => shell,
-  command  => "sudo sed -i 's/class-wp-locale.phpp/class-wp-locale.php/g' /var/www/html/wp-settings.php",
 }
