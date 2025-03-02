@@ -1,4 +1,5 @@
 Postmortem - Server Error 500 Incident
+
 Issue Summary
 
 Duration of the outage: June 2, 2024, 11:00 AM - 1:30 PM (GMT+1)
